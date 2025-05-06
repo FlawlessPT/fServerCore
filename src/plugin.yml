@@ -1,0 +1,4 @@
+name: fServerCore
+main: pt.flawless.fServerCore.Main
+version: 1.0
+description: Plugin that handles base server funcionalities
