@@ -7,9 +7,24 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pt.flawless.fServerCore.listeners.PlayerJoinListener;
 import pt.flawless.fServerCore.listeners.PlayerQuitListener;
 import pt.flawless.fServerCore.listeners.PlayerSpawnListener;
+import pt.flawless.fapi.logs.FConsoleLogger;
 
 public class Main extends JavaPlugin {
-    private Plugin plugin;
+    private static Plugin plugin;
+
+    @Override
+    public void onEnable() {
+        this.plugin = this;
+
+        registerEvents();
+
+        FConsoleLogger.sendEnablePlugin(plugin.getName());
+    }
+
+    @Override
+    public void onDisable() {
+        FConsoleLogger.sendDisablePlugin(plugin.getName());
+    }
 
     private void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new PlayerSpawnListener(), this);
@@ -17,25 +32,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(), this);
     }
 
-    @Override
-    public void onEnable() {
-        registerEvents();
-        this.plugin = this;
-        ConsoleCommandSender b = Bukkit.getConsoleSender();
-        b.sendMessage("§e");
-        b.sendMessage("§e[fServerCore] Plugin ativado com sucesso!");
-        b.sendMessage("§e");
-    }
-
-    @Override
-    public void onDisable() {
-        ConsoleCommandSender b = Bukkit.getConsoleSender();
-        b.sendMessage("§c");
-        b.sendMessage("§c[fServerCore] Plugin desativado com sucesso!");
-        b.sendMessage("§c");
-    }
-
-    public Plugin getPlugin() {
-        return this.plugin;
+    public static Plugin getMainPlugin() {
+        return plugin;
     }
 }
