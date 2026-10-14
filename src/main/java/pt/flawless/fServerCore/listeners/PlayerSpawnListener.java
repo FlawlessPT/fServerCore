@@ -13,6 +13,6 @@ import pt.flawless.fapi.logs.FConsoleLogger;
 public class PlayerSpawnListener implements Listener {
     @EventHandler
     public void onPlayerSpawn(PlayerSpawnLocationEvent e) {
-        e.setSpawnLocation(new Location(Bukkit.getServer().getWorld("world"), 224.279, 64, -598.562));
+        e.setSpawnLocation(new Location(Bukkit.getServer().getWorld("world"), 137.517, 70, -46.536));
     }
 }
