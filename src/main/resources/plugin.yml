@@ -3,3 +3,12 @@ main: pt.flawless.fServerCore.FServerCore
 version: 1.0
 description: Plugin that handles base server funcionalities
 depend: [fAPI]
+commands:
+  setspawn:
+    description: Define o spawn do servidor na tua posição
+    usage: /setspawn
+    permission: fservercore.setspawn
+permissions:
+  fservercore.setspawn:
+    description: Permite usar /setspawn
+    default: op
