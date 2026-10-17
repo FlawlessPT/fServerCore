@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import pt.flawless.fServerCore.commands.SetSpawnCommand;
+import pt.flawless.fServerCore.listeners.HungerListener;
 import pt.flawless.fServerCore.listeners.PlayerJoinListener;
 import pt.flawless.fServerCore.listeners.PlayerQuitListener;
 import pt.flawless.fServerCore.listeners.PlayerSpawnListener;
@@ -35,9 +36,10 @@ public class FServerCore extends JavaPlugin {
 
     private void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new PlayerSpawnListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(this), this);
         Bukkit.getPluginManager().registerEvents(new ServerListPingListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new HungerListener(), this);
     }
 
     public static Plugin getMainPlugin() {

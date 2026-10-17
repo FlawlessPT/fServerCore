@@ -10,3 +10,9 @@ spawn:
 motd:
   line1: "&6&lFlawless &7- &aServidor de testes"
   line2: "&eBem-vindo!"
+
+# Mensagem enviada ao jogador quando entra. {player} = nome. Vazio = sem mensagem.
+welcome-message: "&6Bem-vindo ao servidor, &e{player}&6!"
+
+# Mensagem enviada a todos quando um jogador sai. {player} = nome. Vazio = sem mensagem.
+quit-message: ""
