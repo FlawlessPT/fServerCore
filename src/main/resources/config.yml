@@ -5,3 +5,8 @@ spawn:
   z: -46.536
   yaw: 0.0
   pitch: 0.0
+
+# MOTD da lista de servidores. Cores com &0-&9, &a-&f; formatos &l &o &n &m &k; &r repõe.
+motd:
+  line1: "&6&lFlawless &7- &aServidor de testes"
+  line2: "&eBem-vindo!"

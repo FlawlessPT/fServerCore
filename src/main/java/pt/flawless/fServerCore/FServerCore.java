@@ -7,6 +7,7 @@ import pt.flawless.fServerCore.commands.SetSpawnCommand;
 import pt.flawless.fServerCore.listeners.PlayerJoinListener;
 import pt.flawless.fServerCore.listeners.PlayerQuitListener;
 import pt.flawless.fServerCore.listeners.PlayerSpawnListener;
+import pt.flawless.fServerCore.listeners.ServerListPingListener;
 import pt.flawless.fapi.logs.FConsoleLogger;
 
 public class FServerCore extends JavaPlugin {
@@ -18,6 +19,9 @@ public class FServerCore extends JavaPlugin {
         plugin = this;
 
         saveDefaultConfig();
+        // Acrescenta chaves novas a configs já existentes.
+        getConfig().options().copyDefaults(true);
+        saveConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         registerEvents();
 
@@ -33,6 +37,7 @@ public class FServerCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerSpawnListener(this), this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ServerListPingListener(this), this);
     }
 
     public static Plugin getMainPlugin() {
