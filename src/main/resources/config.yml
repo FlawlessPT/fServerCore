@@ -16,3 +16,8 @@ welcome-message: "&6Bem-vindo ao servidor, &e{player}&6!"
 
 # Mensagem enviada a todos quando um jogador sai. {player} = nome. Vazio = sem mensagem.
 quit-message: ""
+
+# Mensagens de morte. {player} = quem morreu, {killer} = quem matou. Vazio = sem mensagem.
+# death-message: qualquer morte sem jogador assassino; kill-message: morto por outro jogador.
+death-message: "&c☠ &7{player} &cmorreu"
+kill-message: "&c☠ &7{player} &cfoi morto por &7{killer}"
