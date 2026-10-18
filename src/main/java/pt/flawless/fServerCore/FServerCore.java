@@ -27,6 +27,7 @@ public class FServerCore extends JavaPlugin {
         saveConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         registerEvents();
+        AutoMessages.start(this);
 
         consoleLogger.sendEnablePluginMessage();
     }

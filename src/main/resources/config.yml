@@ -21,3 +21,14 @@ quit-message: ""
 # death-message: qualquer morte sem jogador assassino; kill-message: morto por outro jogador.
 death-message: "&c☠ &7{player} &cmorreu"
 kill-message: "&c☠ &7{player} &cfoi morto por &7{killer}"
+
+# Mensagens automáticas enviadas a todos os jogadores online (autenticados ou não).
+# interval em segundos; random: false = por ordem, true = aleatória. Mudanças pedem /reload.
+auto-messages:
+  enabled: true
+  interval: 300
+  random: false
+  prefix: "&6[Aviso] &r"
+  messages:
+    - "&eBem-vindo ao servidor! Usa &6/comandos &epara ver os comandos."
+    - "&eRespeita os outros jogadores."
