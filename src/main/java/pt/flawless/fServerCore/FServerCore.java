@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import pt.flawless.fServerCore.commands.SetSpawnCommand;
+import pt.flawless.fServerCore.commands.SpawnCommand;
 import pt.flawless.fServerCore.listeners.HungerListener;
 import pt.flawless.fServerCore.listeners.NoPermissionListener;
 import pt.flawless.fServerCore.listeners.PlayerDeathListener;
@@ -26,6 +27,7 @@ public class FServerCore extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
+        getCommand("spawn").setExecutor(new SpawnCommand(this));
         registerEvents();
         AutoMessages.start(this);
 

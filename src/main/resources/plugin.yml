@@ -8,6 +8,9 @@ commands:
     description: Define o spawn do servidor na tua posição
     usage: /setspawn
     permission: fservercore.setspawn
+  spawn:
+    description: Teleporta para o spawn do servidor
+    usage: /spawn
 permissions:
   fservercore.setspawn:
     description: Permite usar /setspawn
