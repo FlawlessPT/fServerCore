@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.Plugin;
-import org.spigotmc.event.player.PlayerSpawnLocationEvent;
+import io.papermc.paper.event.player.AsyncPlayerSpawnLocationEvent;
 
 // TODO: Move this file to centralized place
 public class PlayerSpawnListener implements Listener {
@@ -28,7 +28,7 @@ public class PlayerSpawnListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerSpawn(PlayerSpawnLocationEvent e) {
+    public void onPlayerSpawn(AsyncPlayerSpawnLocationEvent e) {
         // Mundo em falta: mantém o spawn que o servidor escolheu.
         Location l = spawn();
         if (l != null) e.setSpawnLocation(l);
