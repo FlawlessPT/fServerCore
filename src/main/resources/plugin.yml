@@ -1,5 +1,6 @@
 name: fServerCore
 main: pt.flawless.fServerCore.FServerCore
+api-version: '1.21'
 version: 1.0
 description: Plugin that handles base server funcionalities
 depend: [fAPI]
