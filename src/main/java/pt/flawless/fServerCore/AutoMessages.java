@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,11 +19,12 @@ public class AutoMessages extends BukkitRunnable {
         this.cfg = cfg;
     }
 
-    public static void start(Plugin plugin) {
+    /** Devolve a tarefa, ou {@code null} se as mensagens estão desligadas ou vazias. */
+    public static BukkitTask start(Plugin plugin) {
         ConfigurationSection cfg = plugin.getConfig().getConfigurationSection("auto-messages");
-        if (cfg == null || !cfg.getBoolean("enabled") || cfg.getStringList("messages").isEmpty()) return;
+        if (cfg == null || !cfg.getBoolean("enabled") || cfg.getStringList("messages").isEmpty()) return null;
         long ticks = Math.max(1, cfg.getLong("interval", 300)) * 20L;
-        new AutoMessages(cfg).runTaskTimer(plugin, ticks, ticks);
+        return new AutoMessages(cfg).runTaskTimer(plugin, ticks, ticks);
     }
 
     @Override

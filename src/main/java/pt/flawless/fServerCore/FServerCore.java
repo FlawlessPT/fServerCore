@@ -13,9 +13,12 @@ import pt.flawless.fServerCore.listeners.PlayerQuitListener;
 import pt.flawless.fServerCore.listeners.PlayerSpawnListener;
 import pt.flawless.fServerCore.listeners.ServerListPingListener;
 import pt.flawless.fapi.logs.FConsoleLogger;
+import pt.flawless.fapi.reload.Reloads;
+import org.bukkit.scheduler.BukkitTask;
 
 public class FServerCore extends JavaPlugin {
     private static Plugin plugin;
+    private BukkitTask autoMessages;
     FConsoleLogger consoleLogger = new FConsoleLogger(this.getName());
 
     @Override
@@ -29,7 +32,13 @@ public class FServerCore extends JavaPlugin {
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
         registerEvents();
-        AutoMessages.start(this);
+        autoMessages = AutoMessages.start(this);
+        // as restantes mensagens lêem o config a cada uso; só as automáticas guardam a secção
+        Reloads.register(this, () -> {
+            reloadConfig();
+            if (autoMessages != null) autoMessages.cancel();
+            autoMessages = AutoMessages.start(this);
+        });
 
         consoleLogger.sendEnablePluginMessage();
     }
