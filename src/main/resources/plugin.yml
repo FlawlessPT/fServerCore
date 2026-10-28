@@ -6,13 +6,23 @@ description: Plugin that handles base server funcionalities
 depend: [fAPI]
 commands:
   setspawn:
-    description: Define o spawn do servidor na tua posição
-    usage: /setspawn
+    description: Define o spawn do servidor (ou o VIP, com "vip") na tua posição
+    usage: /setspawn [vip]
     permission: fservercore.setspawn
   spawn:
     description: Teleporta para o spawn do servidor
     usage: /spawn
+  spawnvip:
+    description: Teleporta para o spawn VIP (ou força outro jogador)
+    usage: /spawnvip [jogador]
+    permission: fservercore.spawnvip
 permissions:
   fservercore.setspawn:
     description: Permite usar /setspawn
     default: op
+  fservercore.spawnvip:
+    description: Permite usar /spawnvip
+    default: op
+  fservercore.vip:
+    description: Jogadores VIP entram e renascem no spawn VIP
+    default: false

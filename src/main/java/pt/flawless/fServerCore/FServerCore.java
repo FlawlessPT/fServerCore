@@ -5,6 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import pt.flawless.fServerCore.commands.SetSpawnCommand;
 import pt.flawless.fServerCore.commands.SpawnCommand;
+import pt.flawless.fServerCore.commands.SpawnVipCommand;
 import pt.flawless.fServerCore.listeners.HungerListener;
 import pt.flawless.fServerCore.listeners.NoPermissionListener;
 import pt.flawless.fServerCore.listeners.PlayerDeathListener;
@@ -31,6 +32,7 @@ public class FServerCore extends JavaPlugin {
         saveConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getCommand("spawnvip").setExecutor(new SpawnVipCommand(this));
         registerEvents();
         autoMessages = AutoMessages.start(this);
         // as restantes mensagens lêem o config a cada uso; só as automáticas guardam a secção
