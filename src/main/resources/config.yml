@@ -32,3 +32,11 @@ auto-messages:
   messages:
     - "&eBem-vindo ao servidor! Usa &6/comandos &epara ver os comandos."
     - "&eRespeita os outros jogadores."
+
+# Confirmação ao largar itens (Q). Cada jogador escolhe em /prefs: especiais, todos ou nenhum.
+# window-seconds: tempo para carregar em Q outra vez; materials: itens "especiais" além dos
+# personalizados do fCustomItems; message: {item} = nome, {seconds} = janela. Precisa do fPrefs.
+drop-confirm:
+  window-seconds: 10
+  materials: [DIAMOND, NETHERITE_INGOT, ELYTRA, TOTEM_OF_UNDYING]
+  message: "&eCarrega em Q outra vez em {seconds}s para dropar &f{item}&e."

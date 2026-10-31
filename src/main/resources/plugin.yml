@@ -4,6 +4,7 @@ api-version: '1.21'
 version: 1.0
 description: Plugin that handles base server funcionalities
 depend: [fAPI]
+softdepend: [fPrefs, fCustomItems]
 commands:
   setspawn:
     description: Define o spawn do servidor (ou o VIP, com "vip") na tua posição
