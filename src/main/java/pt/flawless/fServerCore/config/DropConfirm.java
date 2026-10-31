@@ -29,7 +29,8 @@ public final class DropConfirm {
             }
         }
         long seconds = Math.max(1, c.getLong("drop-confirm.window-seconds", 10));
-        return new DropConfirm(seconds * 1000, mats, c.getString("drop-confirm.message", ""));
+        return new DropConfirm(seconds * 1000, mats, c.getString("drop-confirm.message",
+                "&eDropa novamente o item em &7{seconds}s &epara dropar &f{item}&e."));
     }
 
     public long windowMillis() { return windowMillis; }

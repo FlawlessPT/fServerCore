@@ -39,4 +39,4 @@ auto-messages:
 drop-confirm:
   window-seconds: 10
   materials: [DIAMOND, NETHERITE_INGOT, ELYTRA, TOTEM_OF_UNDYING]
-  message: "&eCarrega em Q outra vez em {seconds}s para dropar &f{item}&e."
+  message: "&eDropa novamente o item em &7{seconds}s &epara dropar &f{item}&e."
