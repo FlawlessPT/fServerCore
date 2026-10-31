@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pt.flawless.fServerCore.commands.SetSpawnCommand;
 import pt.flawless.fServerCore.commands.SpawnCommand;
 import pt.flawless.fServerCore.commands.SpawnVipCommand;
+import pt.flawless.fServerCore.listeners.DropLabelListener;
 import pt.flawless.fServerCore.listeners.HungerListener;
 import pt.flawless.fServerCore.listeners.NoPermissionListener;
 import pt.flawless.fServerCore.listeners.PlayerDeathListener;
@@ -58,6 +59,7 @@ public class FServerCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new HungerListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerDeathListener(this), this);
         Bukkit.getPluginManager().registerEvents(new NoPermissionListener(), this);
+        Bukkit.getPluginManager().registerEvents(new DropLabelListener(this), this);
     }
 
     public static Plugin getMainPlugin() {
